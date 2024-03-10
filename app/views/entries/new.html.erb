@@ -1,7 +1,10 @@
 <h1>New Entry</h1>
 
-<form action="/entries" method="post">
+
+
+<form action="/entries" method="entry" enctype="multipart/form-data">
   <input type="hidden" name="place_id" value="<%= params["place_id"] %>">
+  
 
   <p>
     <label for="title_input">Title</label>
@@ -13,15 +16,20 @@
     <input type="text" name="description" id="description_input">
   </p>
 
-  <div class="mb-3">
-    <%= form.label "uploaded_image", :class => "form-label" %>
-    <%= form.file_field "uploaded_image", :class => "form-control" %>
-  </div>
+  <%= form_for @entry, html: { multipart: true } do |form| %>
+    <div class="mb-3">
+      <%= form.label :uploaded_image, class: "form-label" %>
+      <%= form.file_field :uploaded_image, class: "form-control" %>
+    </div>
+
+
 
   <p>
     <label for="occurred_on_input">Occurred On</label>
     <input type="date" name="occurred_on" id="occurred_on_input">
   </p>
 
-  <button>Save</button>
+
+    <%= form.submit "Save", class: "btn btn-primary" %>
+<% end %>
 </form>
