@@ -13,10 +13,10 @@
     <input type="text" name="description" id="description_input">
   </p>
 
-   <p>
-    <label for="image_input">Image URL</label>
-    <input type="text" name="image" id="image_input">
-  </p>
+  <div class="mb-3">
+    <%= form.label "uploaded_image", :class => "form-label" %>
+    <%= form.file_field "uploaded_image", :class => "form-control" %>
+  </div>
 
   <p>
     <label for="occurred_on_input">Occurred On</label>

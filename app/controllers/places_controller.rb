@@ -19,7 +19,9 @@ class PlacesController < ApplicationController
       @place["name"] = params["name"]
       @place["user_id"] = @user["id"]
       @place.save
+    end
     redirect_to "/places"
   end
+
 
 end
