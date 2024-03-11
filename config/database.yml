@@ -27,6 +27,6 @@ production:
 production:
   <<: *default
   adapter: postgresql
-  database: tacogram_final_production
-  username: tacogram_final
-  password: <%= ENV["TACOGRAM_FINAL_DATABASE_PASSWORD"] %>
+  database: hw4_production
+  username: hw4
+  password: <%= ENV["hw4_DATABASE_PASSWORD"] %>
